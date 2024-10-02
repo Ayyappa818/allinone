@@ -1,24 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import React, { useEffect, useState } from 'react';
+import { useParams,useLocation } from 'react-router-dom';
 
 function CountryDetails() {
+  var [d,setD]=React.useState({})
+
     var x = useParams()
-    console.log(x)
-    var [details,setDetails]=useState()
-    useEffect(()=>{
-      fetch(`https://restcountries.com/v3/names/${x.cname}`)
-      .then(res=>res.json())
-      .then(data=>{
-        setDetails({...data[0]})
+    // console.log(x)
+   
+    useEffect(function(){
+      fetch(`https://restcountries.com/v3/name/${x.cname}`).then(function(res){
+        res.json().then(function(data){
+          // console.log(data)
+          setD({...data[0]})
+        })
       })
-    },[x.cname])
+    })
   return (
     <div>
       <h1>CountryDetails</h1>
       <h1>{x.cname}CountryDetails</h1>
-     
+
+      <h1>{d.population}</h1>
+         
     </div>
   )
 }
 
-export default CountryDetails
+export default CountryDetails;

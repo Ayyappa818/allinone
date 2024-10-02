@@ -4,10 +4,10 @@ import { Link, Outlet } from 'react-router-dom';
 function Country() {
     var [Countries,setCountries] = useState();
     React.useEffect(()=>{
-        fetch("https://restcountries.com/v3.1/all")
+        fetch("https://restcountries.com/v3/all")
         .then((res)=>{return res.json()})
         .then((data)=>{
-            console.log(data)
+            // console.log(data)
             setCountries([...data])
         })
     },[])
@@ -27,4 +27,4 @@ function Country() {
   )
 }
 
-export default Country
+export default Country;
