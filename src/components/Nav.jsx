@@ -2,7 +2,7 @@ import React from 'react'
 
 function Nav() {
   return (
-    <div>
+    <div className='sticky-top bg-primary'>
       <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -12,10 +12,11 @@ function Nav() {
 
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="/features" class="nav-link">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="/features" class="nav-link active">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active">FAQs</a></li>
+        <li class="nav-item"><a href="/country" class="nav-link active">Countries</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active">About</a></li>
         <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Dropdown button

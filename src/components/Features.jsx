@@ -2,7 +2,7 @@ import React from 'react'
 
 function Features() {
   return (
-    <div>
+    <div className='container'>
       <ul>
         <li>html</li>
         <li>css</li>
