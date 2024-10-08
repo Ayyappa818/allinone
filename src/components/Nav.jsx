@@ -14,7 +14,7 @@ function Nav() {
         <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="/features" class="nav-link active">Features</a></li>
         <li class="nav-item"><a href="#" class="nav-link active">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link active">FAQs</a></li>
+        <li class="nav-item"><a href="/det" class="nav-link active">Details</a></li>
         <li class="nav-item"><a href="/country" class="nav-link active">Countries</a></li>
         <li class="nav-item"><a href="#" class="nav-link active">About</a></li>
         <div class="dropdown">

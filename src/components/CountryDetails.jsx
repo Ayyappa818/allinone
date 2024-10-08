@@ -14,7 +14,7 @@ function CountryDetails() {
           setD({...data[0]})
         })
       })
-    })
+    },[])
   return (
     <div>
       <h1>CountryDetails</h1>
@@ -22,6 +22,7 @@ function CountryDetails() {
 
       <h1>{d.population}</h1>
          
+        {/* <img src={d.flags} alt="" width="200px"/> */}
     </div>
   )
 }
