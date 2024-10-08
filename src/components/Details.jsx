@@ -13,13 +13,11 @@ function Details() {
             email:""
         },
         validationSchema:Yup.object({
-            firstname:Yup.string().min(3,"Fill atleast 3 letters").required("must enter the firstname"),
-            age:Yup.number().required("must enter the age")
+            firstname:Yup.string().min(3,"atlest 3 letters")
         }),
         onSubmit: (values) =>{
             console.log(values)
-     setX([...x,values])
-            
+            setX([...x,values])  
         }
          
     })
@@ -30,14 +28,16 @@ function Details() {
         <form onSubmit={forms.handleSubmit}>
             <div className="d-flex flex-wrap justify-content-around">
             <div>
-            <input type="text" className='form-control w-100 input1' placeholder='FirstName' name='firstname'  onChange={forms.handleChange} onBlur={forms.handleBlur} />
-            <b>{forms.dirty.firstname && forms.errors.firstname}</b>
+            <input type="text" className='form-control w-100 input1' placeholder='FirstName' name='firstname' {...forms.getFieldProps('firstname')} />
+            <b>{forms.errors.firstname}</b>
             <br />
             <input type="text" className='form-control w-100 input2' placeholder='LastName'   {...forms.getFieldProps('lastname')} />
             <br />
             <input type="text" className='form-control w-100 input3' placeholder='Age'  {...forms.getFieldProps('age')} />
             <br />
-            <input type="text" className='form-control w-100 input4' placeholder='Gender' {...forms.getFieldProps('gender')} />
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  {...forms.getFieldProps('gender')} value="male" />:Male
+            <input type="radio" class="form-check-input"  name="flexRadioDefault" id="flexRadioDefault1" {...forms.getFieldProps('gender')} value="female"/>:Female
+            <input type="radio" class="form-check-input" name="flexRadioDefault" id="flexRadioDefault1"  {...forms.getFieldProps('gender')} value="others"/>:Others
             <br />
             <input type="text" className='form-control w-100 input5' placeholder='Email' {...forms.getFieldProps('email')} />
             <br />
