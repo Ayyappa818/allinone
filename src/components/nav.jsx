@@ -15,6 +15,7 @@ function Nav() {
           <li><a href="/fe" class="nav-link px-2 text-white">Features</a></li>
           <li><a href="/pr" class="nav-link px-2 text-white">Pricing</a></li>
           <li><a href="/details" class="nav-link px-2 text-white">Details</a></li>
+          <li><a href="/customer" class="nav-link px-2 text-white">Customer</a></li>
           <li><a href="/ab" class="nav-link px-2 text-white">About</a></li>
         </ul>
 
