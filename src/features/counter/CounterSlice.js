@@ -9,11 +9,11 @@ export const CounterSlice=createSlice({
         incCount:(state,action)=>{
             state.count++
         },
-        decCount:{
-            decCount:(state)=>{state.count--}
+        decCount:(state,action)=>{
+            state.count--
         },
-        resetCount:{
-            resetCount:(state)=>{state.count=initialState.count}
+        resetCount:(state,action)=>{
+            state.count=initialState.count
         }
     }
 })
