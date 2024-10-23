@@ -4,13 +4,15 @@ import Counter from './features/counter/Counter';
 import products from './features/products/products.json'
 import ProductList from './features/products/ProductList';
 import { useSelector } from 'react-redux';
+import Newproducts from './features/newproducts/Newproducts';
 function App() {
   var {cartItems}= useSelector(state=>state.productReducer)
   return (
     <div>
       <Counter></Counter>
-      <h2>CartItemsCount: {cartItems?.length}</h2>
-      <ProductList></ProductList>
+      <Newproducts></Newproducts>
+      {/* <h2>CartItemsCount: {cartItems?.length}</h2>
+      <ProductList></ProductList> */}
     </div>
   );
 }
