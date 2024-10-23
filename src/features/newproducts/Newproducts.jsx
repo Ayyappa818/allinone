@@ -7,6 +7,16 @@ function Newproducts() {
   return (
     <div>
       <h1>New products</h1>
+      {
+        isLoading && <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      }
+      {
+        !isLoading && data.map((p)=>{
+          return <li>{p.title}</li>
+        })
+      }
     </div>
   )
 }
