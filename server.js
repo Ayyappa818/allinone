@@ -9,3 +9,4 @@ server.use(router)
 server.listen(4000, () => {
   console.log('JSON Server is running on 4000')
 })      
+// to start the server --- node server.js
