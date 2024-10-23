@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import CounterReducer from '../features/counter/CounterSlice'
 import productReducer from '../features/products/productSlice'
 import { productsApi } from '../services/Product'
+import { setupListeners } from '@reduxjs/toolkit/query'
 export const store = configureStore({
   reducer: {
     counter:CounterReducer,
