@@ -17,7 +17,7 @@ function Nav() {
         <li><Link to="/cou" class="nav-link px-2">Counter</Link></li>
         <li><Link to="/pro" class="nav-link px-2">Products</Link></li>
         <li><Link to="/p" class="nav-link px-2">NewProducts</Link></li>
-        <li><Link to="/" class="nav-link px-2">About</Link></li>
+        <li><Link to="/newto" class="nav-link px-2">Todo</Link></li>
       </ul>
 
       <div class="col-md-3 text-end">

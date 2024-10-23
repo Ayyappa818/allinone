@@ -12,6 +12,7 @@ import {
 import Counter from './features/counter/Counter';
 import ProductList from './features/products/ProductList';
 import Newproducts from './features/newproducts/Newproducts';
+import Todolist from './features/todolist/Todolist';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,8 +31,8 @@ const router = createBrowserRouter([
         element:<Newproducts></Newproducts>,
       },
       {
-        path:"/",
-        element:<></>,
+        path:"/newto",
+        element:<Todolist></Todolist>,
       },
     ]
   },
