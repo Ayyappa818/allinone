@@ -10,6 +10,8 @@ import {
 import Board from './features/todolist/Board';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
+import Todolist from './features/todolist/Todolist';
+import BMastercard from './features/todolist/BMastercard';
 
 const router = createBrowserRouter([
   {
@@ -17,8 +19,18 @@ const router = createBrowserRouter([
     element: <App></App>,
     children:[
       {
-        path: "/bo",
+        path: "/",
         element: <Board></Board>,
+        children:[
+          {
+            path:"/",
+            element:<BMastercard></BMastercard>
+          },
+          {
+            path:"/todo/:id",
+            element:<Todolist></Todolist>
+          }
+        ]
       }
     ]
   },

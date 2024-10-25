@@ -9,7 +9,7 @@
     "board":[
       {
         "id":1,
-        "title":"NewMovie",
+        "title":"NewMovies",
         "todos":[
           {
             "task":"Venom",
@@ -24,7 +24,7 @@
             "status":true
           },
           {
-            "task":"Transformers One",
+            "task":"Swag",
             "status":true
           }
         ]
