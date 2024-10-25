@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { boardApi } from "../services/BoardApi";
-
+import { setupListeners } from "@reduxjs/toolkit/query";
 export const store = configureStore({
     reducer: {
         [boardApi.reducerPath]: boardApi.reducer,

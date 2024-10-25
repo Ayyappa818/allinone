@@ -32,7 +32,20 @@
       {
         "id":2,
         "title":"Complete Day Task",
-        "todos":[]
+        "todos":[
+          {
+            "task":"To complete the delete lists",
+            "status":true
+          },
+          {
+            "task":"To complete the edit task",
+            "status":false
+          },
+          {
+            "task":"Upply some Styling",
+            "status":false
+          }
+        ]
       }
     ]
   }
