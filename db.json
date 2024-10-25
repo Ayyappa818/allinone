@@ -5,5 +5,34 @@
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { "name": "typicode" },
+    "board":[
+      {
+        "id":1,
+        "title":"NewMovie",
+        "todos":[
+          {
+            "task":"Venom",
+            "status":false
+          },
+          {
+            "task":"Love Reddy",
+            "status":false
+          },
+          {
+            "task":"Transformers One",
+            "status":true
+          },
+          {
+            "task":"Transformers One",
+            "status":true
+          }
+        ]
+      },
+      {
+        "id":2,
+        "title":"Complete Day Task",
+        "todos":[]
+      }
+    ]
   }
