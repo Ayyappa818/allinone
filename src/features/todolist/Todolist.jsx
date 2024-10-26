@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useAddNewTaskMutation, useGetTodolistByIdQuery } from '../../services/BoardApi'
+import { useAddNewTaskMutation, useGetTodolistByIdQuery, useLazyGetTodolistByIdQuery } from '../../services/BoardApi'
 
 function Todolist() {
+  var {id}=useParams()
     var [newTodo,setNewTodo]=useState('')
-    var {id}=useParams()
     var {isLoading,data}=useGetTodolistByIdQuery(id)
     var [addTodoFn]=useAddNewTaskMutation()
-    function addTodo(){
+    var [getTodolistFn]=useLazyGetTodolistByIdQuery()
+    async function addTodo(){
         var temp=JSON.parse(JSON.stringify(data));
         temp.todos.push({task:newTodo,status:false});
-        addTodoFn(temp)
+        await addTodoFn(temp)
+        getTodolistFn(id);
     }
     // console.log(isLoading,data)
   return (
@@ -19,7 +21,7 @@ function Todolist() {
       {
         isLoading && <b>Loading....</b>
       }
-      <input type="text" name="" id="" />
+      <input type="text" onChange={(e)=>{setNewTodo(e.target.value)}} />
       <button onClick={()=>{addTodo()}}>Add New Task</button>
       {
         !isLoading && data.todos.map((t)=>{

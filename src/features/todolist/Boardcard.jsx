@@ -17,7 +17,7 @@ function Boardcard({todo}) {
                         })
                     }
                 </ul>
-                <Link to={`/todo/${todo.id}`} class="btn btn-primary">Go somewhere</Link>
+                <Link to={`/todo/${todo.id}`} class="btn btn-primary">Add/View</Link>
             </div>
         </div>
   )

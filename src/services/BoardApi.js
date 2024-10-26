@@ -13,7 +13,7 @@ export const boardApi = createApi({
       query: (id) => `/${id}`,
     }),
     addNewTask:builder.mutation({
-      query: ({todolist})=>({
+      query: (todolist)=>({
         url:`/${todolist.id}`,
         method:'PUT',
         body:todolist,
@@ -24,4 +24,9 @@ export const boardApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetAllTodoListsQuery,useGetTodolistByIdQuery,useAddNewTaskMutation } = boardApi
+export const { 
+  useGetAllTodoListsQuery,
+  useGetTodolistByIdQuery,
+  useAddNewTaskMutation,
+  useLazyGetTodolistByIdQuery,
+ } = boardApi

@@ -1,51 +1,69 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" },
-    "board":[
-      {
-        "id":1,
-        "title":"NewMovies",
-        "todos":[
-          {
-            "task":"Venom",
-            "status":false
-          },
-          {
-            "task":"Love Reddy",
-            "status":false
-          },
-          {
-            "task":"Transformers One",
-            "status":true
-          },
-          {
-            "task":"Swag",
-            "status":true
-          }
-        ]
-      },
-      {
-        "id":2,
-        "title":"Complete Day Task",
-        "todos":[
-          {
-            "task":"To complete the delete lists",
-            "status":true
-          },
-          {
-            "task":"To complete the edit task",
-            "status":false
-          },
-          {
-            "task":"Upply some Styling",
-            "status":false
-          }
-        ]
-      }
-    ]
-  }
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "board": [
+    {
+      "id": 1,
+      "title": "NewMovies",
+      "todos": [
+        {
+          "task": "Venom",
+          "status": false
+        },
+        {
+          "task": "Love Reddy",
+          "status": false
+        },
+        {
+          "task": "Transformers One",
+          "status": true
+        },
+        {
+          "task": "Swag",
+          "status": true
+        },
+        {
+          "task": "Sathyam Sundaram",
+          "status": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Complete Day Task",
+      "todos": [
+        {
+          "task": "To complete the delete lists",
+          "status": true
+        },
+        {
+          "task": "To complete the edit task",
+          "status": false
+        },
+        {
+          "task": "Upply some Styling",
+          "status": false
+        },
+        {
+          "task": "Bootstrap",
+          "status": false
+        }
+      ]
+    }
+  ]
+}
