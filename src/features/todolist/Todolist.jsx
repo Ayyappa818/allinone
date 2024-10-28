@@ -15,6 +15,12 @@ function Todolist() {
         getTodolistFn(id);
     }
     // console.log(isLoading,data)
+    async function delTOdo(i){
+      var temp=JSON.parse(JSON.stringify(data));
+      temp.todos.splice(i,1);
+      await addTodoFn(temp)
+      getTodolistFn(id)
+    }
   return (
     <div>
       <h1>{!isLoading && data.title.toUpperCase()} Todolist</h1>
@@ -24,8 +30,11 @@ function Todolist() {
       <input type="text" onChange={(e)=>{setNewTodo(e.target.value)}} />
       <button onClick={()=>{addTodo()}}>Add New Task</button>
       {
-        !isLoading && data.todos.map((t)=>{
-            return <li>{t.task}</li>
+        !isLoading && data.todos.map((t,i)=>{
+            return <li key={`${t.title}+${i}`}>
+              {t.task}
+              <button onClick={()=>{delTOdo(i)}}>Delete</button>
+              </li>
         })
       }
     </div>
