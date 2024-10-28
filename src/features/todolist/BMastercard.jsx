@@ -1,10 +1,14 @@
-import React from 'react'
-import { useGetAllTodoListsQuery } from '../../services/BoardApi'
+import React, { useEffect } from 'react'
+import { useGetAllTodoListsQuery, useLazyGetAllTodoListsQuery } from '../../services/BoardApi'
 import Boardcard from './Boardcard'
 
 function BMastercard() {
     var {isLoading,data}=useGetAllTodoListsQuery()
     // console.log(data)
+    var [getAllTodolistFn]=useLazyGetAllTodoListsQuery()
+    useEffect(()=>{
+      getAllTodolistFn()
+    })
   return (
     <div>
       {
@@ -12,7 +16,7 @@ function BMastercard() {
         <span class="visually-hidden">Loading...</span>
       </div>
       }
-      <div className='d-flex'>
+      <div className='d-flex flex-wrap justify-content-evenly'>
       {
         !isLoading && data?.map((todo)=>{
           return <Boardcard todo={todo}></Boardcard>

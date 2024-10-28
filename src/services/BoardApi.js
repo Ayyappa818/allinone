@@ -18,7 +18,20 @@ export const boardApi = createApi({
         method:'PUT',
         body:todolist,
       })
-    })
+    }),
+    addTodolist:builder.mutation({
+      query: (body)=>({
+        url:`/`,
+        method:'POST',
+        body,
+      })
+    }),
+    deleteTodolist:builder.mutation({
+      query: (id)=>({
+        url:`/${id}`,
+        method:'DELETE',
+      })
+    }),
   }),
 })
 
@@ -29,4 +42,7 @@ export const {
   useGetTodolistByIdQuery,
   useAddNewTaskMutation,
   useLazyGetTodolistByIdQuery,
+  useAddTodolistMutation,
+  useLazyGetAllTodoListsQuery,
+  useDeleteTodolistMutation,
  } = boardApi
