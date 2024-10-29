@@ -27,8 +27,8 @@ function Board() {
         <h1 class="modal-title fs-5" id="exampleModalLabel">TodoList title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <input type="text" onChange={(e)=>{SetListTitle(e.target.value)}}/>
+      <div class="modal-body input-group mb-3">
+          <input type="text" class="form-control" placeholder="TodoListName" aria-label="TodoListName" aria-describedby="basic-addon1" onChange={(e)=>{SetListTitle(e.target.value)}}/>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
