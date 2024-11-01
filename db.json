@@ -23,23 +23,28 @@
       "todos": [
         {
           "task": "Venom",
-          "status": false
+          "status": "doing",
+          "id":"t1"
         },
         {
           "task": "Love Reddy",
-          "status": false
+          "status": "todo",
+          "id":"t2"
         },
         {
           "task": "Transformers One",
-          "status": true
+          "status": "done",
+          "id":"t3"
         },
         {
           "task": "Swag",
-          "status": true
+          "status": "done",
+          "id":"t4"
         },
         {
           "task": "Sathyam Sundaram",
-          "status": false
+          "status": "done",
+          "id":"t5"
         }
       ]
     },
@@ -49,19 +54,23 @@
       "todos": [
         {
           "task": "To complete the delete lists",
-          "status": true
+          "status": "done",
+          "id":"t1"
         },
         {
           "task": "To complete the edit task",
-          "status": false
+          "status": "doing",
+          "id":"t2"
         },
         {
           "task": "Upply some Styling",
-          "status": false
+          "status": "todo",
+          "id":"t3"
         },
         {
           "task": "Bootstrap",
-          "status": false
+          "status": "doing",
+          "id":"t4"
         }
       ]
     },
