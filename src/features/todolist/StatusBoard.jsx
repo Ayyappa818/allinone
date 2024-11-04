@@ -1,13 +1,25 @@
 import React from 'react'
+import { useAddNewTaskMutation } from '../../services/BoardApi';
 
 function StatusBoard({todol,type}) {
-console.log(todol)
+  var [updateTodolistFn]=useAddNewTaskMutation()
 function handleDragstart(ev,tid){
   ev.dataTransfer.setData("abc",JSON.stringify({"id":ev.target.id,"tid":tid}))
 }
 function handleDrop(ev,tid){
   console.log(tid)
   var {id,tid}=JSON.parse(ev.dataTransfer.getData("abc"));
+// console.log(todol)
+  var temp=JSON.parse(JSON.stringify(todol));
+var todos =temp.todos.map((t)=>{
+  if(t.id===tid){
+    t.status=type;
+  }
+    return t
+})
+temp.todos=todos;
+updateTodolistFn(temp).then(()=>{})
+
   if(ev.target.tagName==="LI"){
     ev.target.parentElement.appendChild(document.getElementById(id))
   }
