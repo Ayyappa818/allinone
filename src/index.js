@@ -11,11 +11,27 @@ import {
 } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from './app/store';
+import Home from './features/Home';
+import Login from './features/login/Login';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    children:[
+      {
+        path: "/home",
+        element:<Home></Home>,
+      },
+      {
+        path: "/login",
+        element:<Login></Login>,
+      },
+      {
+        path: "/",
+        element:<></>,
+      },
+    ]
   },
   {
     path: "about",
