@@ -7,15 +7,25 @@ export const CrmApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:7777/' }),
   endpoints: (builder) => ({
     login: builder.mutation({
-        query: ({user}) => ({
-            url: '/login',
+        query: (user) => ({
+            url: `/login`,
             method: 'POST',
             body: user,
           }),
     }),
+    signup: builder.mutation({
+      query: (user) => ({
+          url: '/signup',
+          method: 'POST',
+          body: user,
+        }),
+  }),
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useLoginMutation } = CrmApi
+export const { 
+  useLoginMutation,
+  useSignupMutation
+ } = CrmApi

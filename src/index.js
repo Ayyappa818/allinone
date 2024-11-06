@@ -11,7 +11,6 @@ import {
 } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-import Home from './features/Home';
 import Login from './features/login/Login';
 import Signup from './features/login/Signup';
 
@@ -21,16 +20,16 @@ const router = createBrowserRouter([
     element: <App></App>,
     children:[
       {
-        path: "/home",
-        element:<Home></Home>,
+        path: "/signup",
+        element:<Signup></Signup>,
+      },
+      {
+        path: "/",
+        element:,
       },
       {
         path: "/login",
         element:<Login></Login>,
-      },
-      {
-        path: "/signup",
-        element:<Signup></Signup>,
       },
     ]
   },
