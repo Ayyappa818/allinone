@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik,Form,Field } from 'formik'
 
 function Login() {
+    
   return (
     <div>
       <Formik initialValues={{username:"",password:""}}
@@ -10,8 +11,8 @@ function Login() {
       }}
       >
         <Form>
-            <Field name="user" type="text"></Field>
-            <Field name="password" type="password"></Field>
+            <Field name="username" type="text"></Field><br />
+            <Field name="password" type="password"></Field><br />
             <button type='submit'>Login</button>
         </Form>
       </Formik>
