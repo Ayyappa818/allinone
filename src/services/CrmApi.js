@@ -6,9 +6,9 @@ export const CrmApi = createApi({
   reducerPath: 'CrmApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:7777/' }),
   endpoints: (builder) => ({
-    login: builder.query({
+    login: builder.mutation({
         query: ({user}) => ({
-            url: `/login`,
+            url: '/login',
             method: 'POST',
             body: user,
           }),
@@ -18,4 +18,4 @@ export const CrmApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useLoginQuery } = CrmApi
+export const { useLoginMutation } = CrmApi

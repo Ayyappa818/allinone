@@ -1,27 +1,26 @@
 import React from 'react'
 import { Formik,Form,Field } from 'formik'
 import { Link } from 'react-router-dom'
-import { useLoginMutation } from '../../services/CrmApi'
 
-function Login() {
-    var[LoginFN]=useLoginMutation();
+
+function Signup() {
+    
   return (
     <div>
       <Formik initialValues={{username:"",password:""}}
       onSubmit={(values)=>{
-        // console.log(values)
-        LoginFN(values).then((res)=>{console.log(res)})
+        console.log(values)
       }}
       >
         <Form>
             <Field name="username" type="text"></Field><br />
             <Field name="password" type="password"></Field><br />
-            <button type='submit'>Login</button>
+            <button type='submit'>Signup</button>
         </Form>
       </Formik>
-      <Link to="/signup">SignUp</Link>
+      <Link to="/login">Login</Link>
     </div>
   )
 }
 
-export default Login
+export default Signup
