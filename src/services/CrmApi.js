@@ -31,11 +31,10 @@ export const CrmApi = createApi({
           body: lead,
         }),
     }),
-    del: builder.mutation({
-      query: (user) => ({
-          url: `/deletelead/:id`,
+    delLeads: builder.mutation({
+      query: (id) => ({
+          url: `/deletelead/${id}`,
           method: 'DELETE',
-          body: user,
         }),
     }),
     getLeads:builder.query({
@@ -55,5 +54,6 @@ export const {
   useLoginMutation,
   useSignupMutation,
   useGetLeadsQuery,
-  useAddLeadsMutation
+  useAddLeadsMutation,
+  useDelLeadsMutation
  } = CrmApi
