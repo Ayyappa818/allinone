@@ -7,9 +7,6 @@ function LeadMaster() {
     console.log(data)
   return (
     <div>
-      {/* {
-        !isLoading && 
-      } */}
       {
         isLoading && <h1>Loading.....</h1>
       }
@@ -26,7 +23,7 @@ function LeadMaster() {
         </thead>
         <tbody>
       {
-        data?.map((l,i)=>{
+        !isLoading && data?.map((l,i)=>{
             return <tr>
                 <td>{i}</td>
                 <td>{l.name}</td>
