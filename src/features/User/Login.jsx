@@ -1,16 +1,21 @@
 import React from 'react'
 import { Formik,Form,Field } from 'formik'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useLoginMutation } from '../../services/CrmApi'
 
 function Login() {
+  var navigate=useNavigate();
     var[LoginFN]=useLoginMutation();
   return (
     <div>
       <Formik initialValues={{username:"",password:""}}
       onSubmit={(values)=>{
         // console.log(values)
-        LoginFN(values).then((res)=>{console.log(res)})
+        LoginFN(values).then((res)=>{
+        console.log(res)
+          window.localStorage.setItem("token",res?.data?.token)
+          navigate("/")
+        })
       }}
       >
         <Form>

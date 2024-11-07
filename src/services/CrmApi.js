@@ -6,6 +6,7 @@ export const CrmApi = createApi({
   reducerPath: 'CrmApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:7777/' }),
   endpoints: (builder) => ({
+    
     login: builder.mutation({
         query: (user) => ({
             url: `/login`,
@@ -15,11 +16,19 @@ export const CrmApi = createApi({
     }),
     signup: builder.mutation({
       query: (user) => ({
-          url: '/signup',
+          url: `/signup`,
           method: 'POST',
           body: user,
         }),
-  }),
+    }),
+    getLeads:builder.query({
+      query: ()=>({
+        url:"",
+        headers:{
+          "authorization":window.localStorage.getItem("token")
+        }
+      })
+    }),
   }),
 })
 
@@ -27,5 +36,6 @@ export const CrmApi = createApi({
 // auto-generated based on the defined endpoints
 export const { 
   useLoginMutation,
-  useSignupMutation
+  useSignupMutation,
+  useGetLeadsQuery
  } = CrmApi
