@@ -4,6 +4,9 @@ import { useDelLeadsMutation, useGetLeadsQuery } from '../../services/CrmApi';
 function LeadMaster() {
     var {isLoading,data}=useGetLeadsQuery();
     var [DelLeadsFn]=useDelLeadsMutation();
+    function delLeads(id){
+      DelLeadsFn(id)
+    }
     console.log(isLoading)
     console.log(data)
   return (
@@ -20,19 +23,20 @@ function LeadMaster() {
                 <th>Mode</th>
                 <th>Mobile No.</th>
                 <th>Adress</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
       {
-        !isLoading && data?.map((l,i)=>{
+        !isLoading && data?.map((l)=>{
             return <tr>
-                <td>{i}</td>
+                <td>{l._id}</td>
                 <td>{l.name}</td>
                 <td>{l.intrestedCourse}</td>
                 <td>{l.mode}</td>
                 <td>{l.mobile}</td>
                 <td>{l.address}</td>
-                <td><button  onClick={()=>{DelLeadsFn()}} class="btn btn-danger">Delete</button></td>
+                <td><button  onClick={()=>{delLeads(l._id)}} class="btn btn-danger">Delete</button></td>
             </tr>
         })
       }
