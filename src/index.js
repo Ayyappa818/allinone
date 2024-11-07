@@ -15,6 +15,8 @@ import Login from './features/User/Login';
 import Signup from './features/User/Signup';
 import Home from './Home'
 import DashBoard from './DashBoard';
+import LeadMaster from './features/leads/LeadMaster';
+import AddLeads from './features/leads/AddLeads';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +37,16 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element:<DashBoard></DashBoard>,
+        children:[
+          {
+            path:"/dashboard/",
+            element:<LeadMaster></LeadMaster>
+          },
+          {
+            path:"/dashboard/addlead",
+            element:<AddLeads></AddLeads>
+          }
+        ]
       },
     ]
   },

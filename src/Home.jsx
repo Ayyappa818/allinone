@@ -10,7 +10,7 @@ function Home() {
     }else{
       navigate("/login")
     }
-  },[])
+  })
   return (
     <div>
       <h1>Home</h1>

@@ -1,7 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Nav() {
+  var navigate=useNavigate()
+    function Logout(){
+        window.localStorage.clear();
+        navigate("/")
+    }
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -22,10 +27,8 @@ function Nav() {
           <Link class="nav-link" to="/">Features</Link>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <Link to="/dashboard/addlead"><button class="btn btn-outline-success ms-2" type="submit">New Leads</button></Link>
+      <button onClick={()=>{Logout()}} class="btn btn-outline-secondary ms-2" type="submit">Logout</button>
     </div>
   </div>
 </nav>

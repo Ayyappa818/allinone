@@ -21,6 +21,16 @@ export const CrmApi = createApi({
           body: user,
         }),
     }),
+    addLeads: builder.mutation({
+      query: (lead) => ({
+          url: `/addlead`,
+          headers:{
+            "authorization":window.localStorage.getItem("token")
+          },
+          method: 'POST',
+          body: lead,
+        }),
+    }),
     getLeads:builder.query({
       query: ()=>({
         url:"",
@@ -37,5 +47,6 @@ export const CrmApi = createApi({
 export const { 
   useLoginMutation,
   useSignupMutation,
-  useGetLeadsQuery
+  useGetLeadsQuery,
+  useAddLeadsMutation
  } = CrmApi
