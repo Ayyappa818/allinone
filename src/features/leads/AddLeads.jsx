@@ -67,7 +67,7 @@ function AddLeads() {
           <Field type="text" name="remarks" class="form-control" id="remarks" placeholder="name@example.com"></Field>
           <label for="remarks">remarks</label>
         </div>
-        <button type='submit' onClick={()=>{}} class="btn btn-outline-primary">ADD Leads</button>
+        <button type='submit' onClick={()=>{DelLeadsFn()}} class="btn btn-outline-primary">ADD Leads</button>
         </Form>
       </Formik>
     </div>
