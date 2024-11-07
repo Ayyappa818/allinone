@@ -1,10 +1,9 @@
 import React from 'react'
 import { Formik,Form,Field } from 'formik'
-import { useAddLeadsMutation, useDelLeadsMutation } from '../../services/CrmApi'
+import { useAddLeadsMutation } from '../../services/CrmApi'
 
 function AddLeads() {
   var [AddFn]=useAddLeadsMutation();
-  var [DelLeadsFn]=useDelLeadsMutation();
   return (
     <div className='container'>
       <Formik initialValues={{
@@ -67,7 +66,7 @@ function AddLeads() {
           <Field type="text" name="remarks" class="form-control" id="remarks" placeholder="name@example.com"></Field>
           <label for="remarks">remarks</label>
         </div>
-        <button type='submit' onClick={()=>{DelLeadsFn()}} class="btn btn-outline-primary">ADD Leads</button>
+        <button type='submit' class="btn btn-outline-primary">ADD Leads</button>
         </Form>
       </Formik>
     </div>

@@ -1,8 +1,9 @@
 import React from 'react'
-import { useGetLeadsQuery } from '../../services/CrmApi';
+import { useDelLeadsMutation, useGetLeadsQuery } from '../../services/CrmApi';
 
 function LeadMaster() {
     var {isLoading,data}=useGetLeadsQuery();
+    var [DelLeadsFn]=useDelLeadsMutation();
     console.log(isLoading)
     console.log(data)
   return (
@@ -31,7 +32,7 @@ function LeadMaster() {
                 <td>{l.mode}</td>
                 <td>{l.mobile}</td>
                 <td>{l.address}</td>
-                <td><button class="btn btn-danger">Delete</button></td>
+                <td><button  onClick={()=>{DelLeadsFn()}} class="btn btn-danger">Delete</button></td>
             </tr>
         })
       }

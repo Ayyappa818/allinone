@@ -35,6 +35,9 @@ export const CrmApi = createApi({
       query: (id) => ({
           url: `/deletelead/${id}`,
           method: 'DELETE',
+          headers:{
+            "authorization":window.localStorage.getItem("token")
+          }
         }),
     }),
     getLeads:builder.query({
