@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 function Nav() {
+  var [na,setNa]=useState(true)
+  function LM(){
+    setNa(!na)
+  }
   var navigate=useNavigate()
     function Logout(){
         window.localStorage.clear();
@@ -27,7 +31,7 @@ function Nav() {
           <Link class="nav-link" to="/">Features</Link>
         </li>
       </ul>
-      <Link to="/dashboard/addlead"><button class="btn btn-outline-success ms-2" type="submit">New Leads</button></Link>
+      <Link to={na?"/dashboard/addlead":"/dashboard/"}><button onClick={()=>{LM()}} class="btn btn-outline-success ms-2" type="submit">New Leads</button></Link>
       <button onClick={()=>{Logout()}} class="btn btn-outline-secondary ms-2" type="submit">Logout</button>
     </div>
   </div>

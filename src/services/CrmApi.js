@@ -40,6 +40,15 @@ export const CrmApi = createApi({
           }
         }),
     }),
+    editLeads: builder.mutation({
+      query: (id) => ({
+          url: `/addremark/${id}`,
+          method: 'PUT',
+          headers:{
+            "authorization":window.localStorage.getItem("token")
+          }
+        }),
+    }),
     getLeads:builder.query({
       query: ()=>({
         url:"",
@@ -58,5 +67,6 @@ export const {
   useSignupMutation,
   useGetLeadsQuery,
   useAddLeadsMutation,
-  useDelLeadsMutation
+  useDelLeadsMutation,
+  useEditLeadsMutation
  } = CrmApi

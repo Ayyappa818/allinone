@@ -1,10 +1,14 @@
 import React from 'react'
-import { useDelLeadsMutation, useGetLeadsQuery } from '../../services/CrmApi';
+import { useDelLeadsMutation, useEditLeadsMutation, useGetLeadsQuery } from '../../services/CrmApi';
 
 function LeadMaster() {
     var {isLoading,data}=useGetLeadsQuery();
     var [DelLeadsFn]=useDelLeadsMutation();
-    function delLeads(id){
+    var [EditLeadsFn]=useEditLeadsMutation();
+    function editlead(id){
+      // EditLeadsFn(id)
+    }
+     function delLeads(id){
       DelLeadsFn(id)
     }
     console.log(isLoading)
@@ -28,15 +32,16 @@ function LeadMaster() {
         </thead>
         <tbody>
       {
-        !isLoading && data?.map((l)=>{
+        !isLoading && data?.map((l,i)=>{
             return <tr>
-                <td>{l._id}</td>
+                {/* <td>{l._id}</td> */}
+                <td>{i}</td>
                 <td>{l.name}</td>
                 <td>{l.intrestedCourse}</td>
                 <td>{l.mode}</td>
                 <td>{l.mobile}</td>
                 <td>{l.address}</td>
-                <td><button  onClick={()=>{delLeads(l._id)}} class="btn btn-danger">Delete</button></td>
+                <td><i onClick={()=>{delLeads(l._id)}} class="fs-5 bi bi-trash3-fill text-danger"></i> <i onClick={()=>{editlead(l._id)}} class="fs-5 bi bi-pencil-square text-success"></i></td>
             </tr>
         })
       }
