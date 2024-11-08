@@ -22,7 +22,7 @@ function Nav() {
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/home">Home</Link>
+          <Link class="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/">CRM</Link>
