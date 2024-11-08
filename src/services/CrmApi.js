@@ -49,6 +49,14 @@ export const CrmApi = createApi({
           }
         }),
     }),
+    aboutLeads: builder.query({
+      query: (id) => ({
+          url: `/leaddetails/${id}`,
+          headers:{
+            "authorization":window.localStorage.getItem("token")
+          }
+        }),
+    }),
     getLeads:builder.query({
       query: ()=>({
         url:"",
@@ -68,5 +76,6 @@ export const {
   useGetLeadsQuery,
   useAddLeadsMutation,
   useDelLeadsMutation,
-  useEditLeadsMutation
+  useEditLeadsMutation,
+  useAboutLeadsQuery,
  } = CrmApi

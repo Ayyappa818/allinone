@@ -7,7 +7,7 @@ import { useSignupMutation } from '../../services/CrmApi'
 function Signup() {
     var[SignupFn]=useSignupMutation();
   return (
-    <div>
+    <div className='containner'>
       <Formik initialValues={{username:"",password:""}}
       onSubmit={(values)=>{
         // console.log(values)

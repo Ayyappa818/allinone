@@ -17,6 +17,7 @@ import Home from './Home'
 import DashBoard from './DashBoard';
 import LeadMaster from './features/leads/LeadMaster';
 import AddLeads from './features/leads/AddLeads';
+import AboutLead from './features/leads/AboutLead';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
           {
             path:"/dashboard/addlead",
             element:<AddLeads></AddLeads>
+          },
+          {
+            path:"/dashboard/aboutlead/:id",
+            element:<AboutLead></AboutLead>
           }
         ]
       },

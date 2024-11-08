@@ -7,7 +7,7 @@ function Login() {
   var navigate=useNavigate();
     var[LoginFN]=useLoginMutation();
   return (
-    <div>
+    <div className='container'>
       <Formik initialValues={{username:"",password:""}}
       onSubmit={(values)=>{
         // console.log(values)

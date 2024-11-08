@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDelLeadsMutation, useEditLeadsMutation, useGetLeadsQuery } from '../../services/CrmApi';
+import { Link } from 'react-router-dom';
 
 function LeadMaster() {
     var {isLoading,data}=useGetLeadsQuery();
@@ -18,7 +19,7 @@ function LeadMaster() {
       {
         isLoading && <h1>Loading.....</h1>
       }
-      <table class="table table-striped table-hover table table-dark table-hover" border={"2px solid"}>
+      <table class="table table-striped table-hover table-dark" border={"2px solid"}>
         <thead>
             <tr>
                 <th>S.No</th>
@@ -27,6 +28,7 @@ function LeadMaster() {
                 <th>Mode</th>
                 <th>Mobile No.</th>
                 <th>Adress</th>
+                <th>About More...</th>
                 <th></th>
             </tr>
         </thead>
@@ -41,6 +43,7 @@ function LeadMaster() {
                 <td>{l.mode}</td>
                 <td>{l.mobile}</td>
                 <td>{l.address}</td>
+                <td><Link to={`/dashboard/aboutlead/${l._id}`}><i class="bi bi-file-person fs-4 mx-4"></i></Link></td>
                 <td><i onClick={()=>{delLeads(l._id)}} class="fs-5 bi bi-trash3-fill text-danger"></i> <i onClick={()=>{editlead(l._id)}} class="fs-5 bi bi-pencil-square text-success"></i></td>
             </tr>
         })
