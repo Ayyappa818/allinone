@@ -57,6 +57,16 @@ export const CrmApi = createApi({
           }
         }),
     }),
+    addremarksById: builder.mutation({
+      query: ({remarks,id}) => ({
+          url: `/addremark/${id}`,
+          headers:{
+            "authorization":window.localStorage.getItem("token")
+          },
+          method: 'PUT',
+          body:remarks,
+        }),
+    }),
     getLeads:builder.query({
       query: ()=>({
         url:"",
@@ -78,4 +88,5 @@ export const {
   useDelLeadsMutation,
   useEditLeadsMutation,
   useAboutLeadsQuery,
+  useAddremarksByIdMutation,
  } = CrmApi

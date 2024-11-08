@@ -18,11 +18,15 @@ function Login() {
         })
       }}
       >
-        <Form>
-            <Field name="username" type="text"></Field><br />
-            <Field name="password" type="password"></Field><br />
-            <button type='submit'>Login</button>
-        </Form>
+        {
+          (lo)=>{
+            return (<Form>
+              <Field name="username" type="text"></Field><br />
+              <Field name="password" type="password"></Field><br />
+              <button type='submit'>Login</button>
+          </Form>)
+          }
+        }
       </Formik>
       <Link to="/signup">SignUp</Link>
     </div>

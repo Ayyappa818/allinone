@@ -1,9 +1,9 @@
 import React from 'react'
 import { Formik,Form,Field } from 'formik'
-import { useAddLeadsMutation } from '../../services/CrmApi'
+import { useAddremarksByIdMutation } from '../../services/CrmApi'
 
 function AddLeads() {
-  var [AddFn]=useAddLeadsMutation();
+  var [AddFn]=useAddremarksByIdMutation();
   return (
     <div className='container'>
       <Formik initialValues={{
