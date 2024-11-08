@@ -31,7 +31,7 @@ function Nav() {
           <Link class="nav-link" to="/">Features</Link>
         </li>
       </ul>
-      <Link to={na?"/dashboard/addlead":"/dashboard/"}><button onClick={()=>{LM()}} class="btn btn-outline-success ms-2" type="submit">New Leads</button></Link>
+      <Link to={na?"/dashboard/addlead":"/dashboard/"}><button onClick={()=>{LM()}} class="btn btn-outline-success ms-2" type="submit">{na?"New Leads":"View Leads"}</button></Link>
       <button onClick={()=>{Logout()}} class="btn btn-outline-secondary ms-2" type="submit">Logout</button>
     </div>
   </div>
