@@ -11,7 +11,9 @@ function AddRemarks() {
       <Formik initialValues={{response:"",name:""}}
       onSubmit={(values)=>{
         console.log(values)
-        addRemarksFn({remarks:values,id})
+        addRemarksFn({remarks:values,id}).then(res=>{
+          console.log(res)
+        })
       }}
       >
         {
