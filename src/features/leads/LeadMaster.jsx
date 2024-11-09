@@ -1,8 +1,9 @@
 import React from 'react'
-import { useDelLeadsMutation, useEditLeadsMutation, useGetLeadsQuery } from '../../services/CrmApi';
+import { useDelLeadsMutation, useEditLeadsMutation, useGetLeadsQuery, useLazyGetLeadsQuery } from '../../services/CrmApi';
 import { Link } from 'react-router-dom';
 
 function LeadMaster() {
+  var []=useLazyGetLeadsQuery();
     var {isLoading,data}=useGetLeadsQuery();
     var [DelLeadsFn]=useDelLeadsMutation();
     var [EditLeadsFn]=useEditLeadsMutation();
