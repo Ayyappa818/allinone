@@ -84,6 +84,7 @@ export const {
   useLoginMutation,
   useSignupMutation,
   useGetLeadsQuery,
+  useLazyGetLeadsQuery,
   useAddLeadsMutation,
   useDelLeadsMutation,
   useEditLeadsMutation,
