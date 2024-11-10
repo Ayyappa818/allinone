@@ -1,9 +1,8 @@
-import React from 'react'
 import { useDelLeadsMutation, useEditLeadsMutation, useGetLeadsQuery, useLazyGetLeadsQuery } from '../../services/CrmApi';
 import { Link } from 'react-router-dom';
 
 function LeadMaster() {
-  var []=useLazyGetLeadsQuery();
+  var [getLeadsFn]=useLazyGetLeadsQuery();
     var {isLoading,data}=useGetLeadsQuery();
     var [DelLeadsFn]=useDelLeadsMutation();
     var [EditLeadsFn]=useEditLeadsMutation();
@@ -12,6 +11,7 @@ function LeadMaster() {
     }
      function delLeads(id){
       DelLeadsFn(id)
+      getLeadsFn();
     }
     console.log(isLoading)
     console.log(data)
@@ -20,6 +20,7 @@ function LeadMaster() {
       {
         isLoading && <h1>Loading.....</h1>
       }
+
       <table class="table table-striped table-hover table-dark" border={"2px solid"}>
         <thead>
             <tr>
@@ -28,7 +29,7 @@ function LeadMaster() {
                 <th>Course</th>
                 <th>Mode</th>
                 <th>Mobile No.</th>
-                <th>Adress</th>
+                <th>Address</th>
                 <th>About More...</th>
                 <th></th>
             </tr>
@@ -44,8 +45,8 @@ function LeadMaster() {
                 <td>{l.mode}</td>
                 <td>{l.mobile}</td>
                 <td>{l.address}</td>
-                <td><Link to={`/dashboard/aboutlead/${l._id}`}><i class="bi bi-file-person fs-4 mx-4"></i></Link></td>
-                <td><i onClick={()=>{delLeads(l._id)}} class="fs-5 bi bi-trash3-fill text-danger"></i> <i onClick={()=>{editlead(l._id)}} class="fs-5 bi bi-pencil-square text-success"></i></td>
+                <td><Link to={`/dashboard/aboutlead/${l._id}`}><i class="bi bi-person-vcard fs-4 mx-4"></i></Link></td>
+                <td><i onClick={()=>{delLeads(l._id)}} class="fs-5 bi bi-trash3-fill text-danger"></i> <i onClick={()=>{editlead(l._id)}} class="fs-5 bi bi-pencil-square text-light"></i></td>
             </tr>
         })
       }

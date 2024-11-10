@@ -6,7 +6,6 @@ function DashBoard() {
   return (
     <div>
       <Nav></Nav>
-      <h1>DashBoard</h1>
       <Outlet></Outlet>
     </div>
   )

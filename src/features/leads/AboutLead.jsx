@@ -14,34 +14,42 @@ function AboutLead() {
         isLoading && <p>IsLoading...</p>
       }
       {
-        !isLoading && (<div className='d-flex'>
+        !isLoading && (<div className='d-flex w-75 border border-secondary rounded p-2 me-2 shadow'>
           <div className='w-50'>
-            {data?.name}
+            <ul class="list-group">
+              <li class="list-group-item"><b>Name</b>: {data?.name}</li>
+              <li class="list-group-item"><b>IntrestedCourse</b>: {data?.intrestedCourse}</li>
+              <li class="list-group-item"><b>Mode</b>: {data?.mode}</li>
+              <li class="list-group-item"><b>Mobile</b>: {data?.mobile}</li>
+              <li class="list-group-item"><b>Address</b>: {data?.address}</li>
+            </ul>
             </div>
-            {/* <div> */}
-              <ul className='w-50' style={{listStyle:"none"}}>
-              {
+            <div>
+            {
                 data?.remarks?.map((ab)=>{
-                  return <li>
+                  return <li style={{listStyle:'none'}}>
+                  <div>
                     {typeof(ab)==="string" && (
-                      <div className='bg-info p-2 px-3 rounded'>{ab}</div>
+                      <p className='bg-info p-2 rounded'>{ab}</p>
                     )}
-                    {typeof(ad)==="object" && (
-                      <div className='d-flex bg-light roundded border border-2 p-2 m-2 justify-content-evently'>
-                        <div className='bg-info p-2 px-3 rounded'>{ab.response}</div>
-                        <div className='bg-primary p-2 px-3 rounded'>{ab.name}</div>
-                        <div className='bg-secondary p-2 px-3 rounded'>
+                  </div>
+                  <div>
+                    {typeof(ab)==="object" && (
+                      <div className='d-flex bg-light rounded border border-info mb-2 justify-content-between p-1'>
+                        <div className='bg-info p-2 rounded'>{ab.response}</div>
+                        <div className='bg-primary p-2 rounded'>{ab.name}</div>
+                        <div className='bg-secondary p-2 rounded'>
                           {new Date(ab.timestamp).toDateString()}
                           &nbsp;&nbsp;&nbsp;&nbsp;
                           {new Date(ab.timestamp).toLocaleTimeString()}
                           </div>
                       </div>
                     )}
+                  </div>
                   </li>
                 })
               }
-              </ul>
-            {/* </div> */}
+            </div>
         </div>)
       }
     </div>
