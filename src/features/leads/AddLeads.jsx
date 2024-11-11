@@ -1,9 +1,11 @@
 import React from 'react'
 import { Formik,Form,Field } from 'formik'
 import { useAddLeadsMutation} from '../../services/CrmApi'
+import { useNavigate } from 'react-router-dom'
 
 function AddLeads() {
  var[AddFn]=useAddLeadsMutation()
+ var navigate=useNavigate()
   return (
     <div className='container'>
       <Formik initialValues={{
@@ -21,6 +23,7 @@ function AddLeads() {
       onSubmit={(values)=>{
         AddFn(values).then((res)=>{
           console.log(res)
+          navigate('/dashboard')
         })
         console.log(values)
       }}

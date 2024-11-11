@@ -14,13 +14,17 @@ function AboutLead() {
         isLoading && <p>IsLoading...</p>
       }
       {
-        !isLoading && (<div className='d-flex w-75 border border-secondary rounded p-2 me-2 shadow'>
+        !isLoading && (<div className='d-flex w-75 border border-secondary rounded shadow modal position-static bg-body-secondary p-4 m-4 py-md-5'>
           <div className='w-50'>
             <ul class="list-group">
               <li class="list-group-item"><b>Name</b>: {data?.name}</li>
+              <li class="list-group-item"><b>Experience</b>: {data?.experience}</li>
+              <li class="list-group-item"><b>academics</b>: {data?.academics}</li>
               <li class="list-group-item"><b>IntrestedCourse</b>: {data?.intrestedCourse}</li>
               <li class="list-group-item"><b>Mode</b>: {data?.mode}</li>
               <li class="list-group-item"><b>Mobile</b>: {data?.mobile}</li>
+              <li class="list-group-item"><b>Email</b>: {data?.email}</li>
+              <li class="list-group-item"><b>ReferredBy</b>: {data?.referredBy}</li>
               <li class="list-group-item"><b>Address</b>: {data?.address}</li>
             </ul>
             </div>
@@ -30,12 +34,12 @@ function AboutLead() {
                   return <li style={{listStyle:'none'}}>
                   <div>
                     {typeof(ab)==="string" && (
-                      <p className='bg-info p-2 rounded'>{ab}</p>
+                      <p className='bg-info p-2 rounded bg-light border border-info'>{ab}</p>
                     )}
                   </div>
                   <div>
                     {typeof(ab)==="object" && (
-                      <div className='d-flex bg-light rounded border border-info mb-2 justify-content-between p-1'>
+                      <div className=' bg-light rounded border border-info mb-2 justify-content-between p-1'>
                         <div className='bg-info p-2 rounded'>{ab.response}</div>
                         <div className='bg-primary p-2 rounded'>{ab.name}</div>
                         <div className='bg-secondary p-2 rounded'>
