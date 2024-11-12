@@ -1,13 +1,18 @@
-import React from 'react'
-import { useAboutLeadsQuery } from '../../services/CrmApi'
+import React, { useEffect } from 'react'
+import { useAboutLeadsQuery,useLazyAboutLeadsQuery } from '../../services/CrmApi'
 import { Link, useParams } from 'react-router-dom';
 
 function AboutLead() {
     var {id} = useParams();
+    useEffect(()=>{
+      AboutLeadsFn();
+    },[])
     var {isLoading,data} = useAboutLeadsQuery(id);
-    console.log(isLoading,data)
+    var[AboutLeadsFn]=useLazyAboutLeadsQuery();
+    // console.log(AboutLeadsFn())
+    console.log(isLoading,data);
   return (
-    <div className='container'>
+    <div className='container position-relative'>
       <b>Lead Detatils</b>
       <Link to={`/dashboard/addremark/${id}`}><button className='btn btn-success'>+Add Remarks</button></Link>
       {

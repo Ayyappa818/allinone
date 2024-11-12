@@ -89,5 +89,6 @@ export const {
   useDelLeadsMutation,
   useEditLeadsMutation,
   useAboutLeadsQuery,
+  useLazyAboutLeadsQuery,
   useAddremarksByIdMutation,
  } = CrmApi
