@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom'
 function Home() {
   var navigate=useNavigate()
   useEffect(()=>{
-    console.log(window.localStorage.getItem('token'))
-    if(window.localStorage.getItem('token')){
-      navigate("/dashboard")
-    }else{
-      navigate("/login")
+    var token=localStorage.getItem('token');
+    if(!token || token === "undefined"){
+      navigate("/login");
     }
-  })
+    else{
+      navigate("/dashboard");
+    }
+  },[navigate]);
   return (
     <div>
       <h1>Home</h1>

@@ -15,7 +15,12 @@ function Login() {
         LoginFN(values).then((res)=>{
         console.log(res)
           window.localStorage.setItem("token",res?.data?.token)
-          navigate("/")
+          if(res?.data?.msg==="loginsuccess"){
+            navigate("/dashboard")
+          }
+          else{
+            navigate("/")
+          }
         })
       }}
       >
