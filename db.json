@@ -81,7 +81,73 @@
     },
     {
       "title": "Birthday",
-      "todos": [],
+      "todos": [
+        {
+          "task": "Siva 25-10-2024",
+          "status": "done",
+          "id": "t1"
+        },
+        {
+          "task": "Tarun Birthday 14-12-2024",
+          "status": "doing",
+          "id": "t2"
+        },
+        {
+          "task": "Sunanda Birthday 4-12-2024",
+          "status": "done",
+          "id": "t3"
+        },
+        {
+          "task": "Tinku Sis 4-1-2025",
+          "status": "todo",
+          "id": "t4"
+        },
+        {
+          "task": "Ayyappa swamy 6-1-2025",
+          "status": "todo",
+          "id": "t5"
+        },
+        {
+          "task": "Thota 9-2-2025",
+          "status": "todo",
+          "id": "t6"
+        },
+        {
+          "task": "Mallikarjun 26-2-2025",
+          "status": "todo",
+          "id": "t7"
+        },
+        {
+          "task": "Amma 11-3-2025",
+          "status": "todo",
+          "id": "t8"
+        },
+        {
+          "task": "Aravind Annaya 1-4-2025",
+          "status": "todo",
+          "id": "t9"
+        },
+        {
+          "task": "Jaya 1-4-2025",
+          "status": "todo",
+          "id": "t10"
+        },
+        {
+          "task": "Sandeep 1-4-2025",
+          "status": "todo",
+          "id": "t11"
+        },
+        {
+          "task": "Anji 13-4-2025",
+          "status": "todo",
+          "id": "t12"
+        },
+        {
+          "task": "Jack 5-11-2024",
+          "status": "done",
+          "id": "t13"
+        }
+      ],
       "id": 3
     }
   ]

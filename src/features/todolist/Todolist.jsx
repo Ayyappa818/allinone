@@ -29,20 +29,12 @@ function Todolist() {
         isLoading && <b>Loading....</b>
       }
       <input type="text" onChange={(e)=>{setNewTodo(e.target.value)}} />
-      <button onClick={()=>{addTodo()}}>Add New Task</button>
+      <button class="btn btn-info p-2 m-2" onClick={()=>{addTodo()}}>Add New Task</button>
       <div class="d-flex justify-content-evenly">
       <StatusBoard todol={data} type="todo"></StatusBoard>
       <StatusBoard todol={data} type="doing"></StatusBoard>
       <StatusBoard todol={data} type="done"></StatusBoard>
       </div>
-      {/* {
-        !isLoading && data.todos.map((t,i)=>{
-            return <li key={`${t.title}+${i}`}>
-              {t.task}
-              <button onClick={()=>{delTOdo(i)}}>Delete</button>
-              </li>
-        })
-      } */}
     </div>
   )
 }
