@@ -9,3 +9,5 @@ server.use(router)
 server.listen(4000, () => {
   console.log('JSON Server is running on the 4000')
 })
+
+// json-server --watch dblClick.json    **
